@@ -135,8 +135,10 @@
 		var friendsAnswers = {
 			name: $('#answer_name').val().trim(),
 			photo: $('#answer_photo').val().trim(),
-			scores: [parseInt($("#answer_firstquestion").val()), parseInt($("#answer_secondquestion").val()),parseInt($("answer_thirdquestion").val()), parseInt($("#answer_fourthquestion").val()),parseInt($("#answer_firstquestion").val()), parseInt($("#answer_sixthquestion").val()),parseInt($("#answer_seventhquestion").val()), parseInt($("#answer_eigthquestion").val()),parseInt($("#answer_ninthquestion").val()), parseInt($("#answer_tenthquestion").val())]
+			scores: [parseInt($("#answer_firstquestion").val()), parseInt($("#answer_secondquestion").val()),parseInt($("#answer_thirdquestion").val()), parseInt($("#answer_fourthquestion").val()),parseInt($("#answer_fifthquestion").val()), parseInt($("#answer_sixthquestion").val()),parseInt($("#answer_seventhquestion").val()), parseInt($("#answer_eigthquestion").val()),parseInt($("#answer_ninthquestion").val()), parseInt($("#answer_tenthquestion").val())]
+		
 		};
+
 		console.log(friendsAnswers);
 		// This line is the magic. It's very similar to the standard ajax function we used. 
 		// Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
@@ -145,7 +147,34 @@
 		// Here we get the location of the root page. 
 		// We use this instead of explicitly saying the URL is localhost:3001 because the url will change when we deploy.
 
-	    	}
+$.post( "/api/friends-check", { scores: friendsAnswers.scores }, function(data){
+
+// The data we get back will either be a name in firends.js or a zero if we didn't find a match
+
+if(data!=0){
+
+	alert("Friend Name "+ data);
+
+
+}else{
+
+	alert("No friends");
+
+}
+
+});
+
+
+//$.post()
+
+
+
+		return false
+	    	
+	    	});
+
+
+
 	    	// Clear the form when submitting
     		$('#answer_name').val("");
     		$('#answer_photo').val("");
@@ -157,16 +186,45 @@
 			$('#answer_eigthquestion').val("");
 			$('#answer_ninthquestion').val("");
 			$('#answer_tenthquestion').val("");
-		
+
+//compare the total friends array		
+// function comparison (scoreresults){
+// for (var i =0; i< friendsArray.length; i++{
+
+// //compare the scores section in array
+// for (var j =0; j< friendsArray[i].scores.length; j++{
+
+// 	// api check scores and then api will take the scores that they were submitted and compares the results 
+// 	// from friends.js
+
+
+// // 	if friendsAnswers.scores - friendsArray[i].scores <
+// // if (err) throw err;
+
+// }
+// }
+// }
+
+
+// }
+// }
+// 	}
 
 
 
-
-	    });
+	    // });
 // return false;
-// });
+
 </script>
 
+
+
+
+
+
+
+<!-- //heroku link
+https://shrouded-badlands-71793.herokuapp.com/ | https://git.heroku.com/shrouded-badlands-71793.git -->
 
 	<!-- 	var currentURL = window.location.origin;
 	    $.post(currentURL + "/api/tables", newReservation,

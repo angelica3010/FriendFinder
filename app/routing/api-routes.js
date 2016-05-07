@@ -28,17 +28,41 @@ app.get('/api/friends', function(req, res){
 });
 
 
-app.post('/api/friends', function(req, res){
+app.post('/api/friends-check', function(req, res){
 
-		// Note the code here. Our "server" will respond to requests and let users know if they have a table or not.
-		// It will do this by sending out the value "true" have a table 
-		if(friendsData.length < 10 ){
-			friendsData.push(req.body);
-			res.json(true); // KEY LINE
-		}
 
-		else{
-			res.json(false); // KEY LINE
-		}
+		/// This route checks the array of survey answers in ( req.body ) sent to it vs the database of friends in friends.js
 
-	});
+if (friends-check.body<friendsArray.body){
+
+}
+
+else
+
+
+
+console.log(friends);
+console.log(req.body);
+
+
+
+
+
+res.json("Angel");
+
+
+		/// this route returns to the API caller (ajax on the front end) the name of a matched friend or 0 for no friend matches
+
+
+
+
+
+
+
+	// 	else{
+	// 		res.json(false); // KEY LINE
+	// 	}
+
+	 });
+
+}
