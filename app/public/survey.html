@@ -15,21 +15,16 @@
 	<div class="container">
 		
 		<div class="jumbotron">
-			<h1 class="text-center"><span class="glyphicon glyphicon-fire"></span> Dating Page</h1>
+			<h1 class="text-center"><span class="glyphicon glyphicon-fire"></span> Friend Finder</h1>
 			<hr>
 			<h2 class="text-center">Let's See Who's a Potential Match</h2>
 			<br>
-
-			<!-- <div class="text-center">
-				<a href="/tables"><button type="button" class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-list-alt"></span> Click to Find Out</button></a>
-				<a href="/"><button type="button" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-home"></span></button></a>		
-			</div> -->
 		</div>
 
 		<div class="row">
 			<div class="col-lg-12">
 
-				<!-- Reservation Page -->
+				<!-- Dating Survey -->
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						<h4 class="panel-title">Dating Survey</h4>
@@ -45,58 +40,58 @@
 							</div>
 
 							<div class="form-group">
-								<label for="">Photo (Send a URL) </label>
+								<label for="">Photo URL (Please type http:// in the beginning for the URL) </label>
 								<input type="url" class="form-control" id="answer_photo">
 							</div>
 
 							<div class="form-group">
-								<label for="">1) On A Scale of 1-5: How often do you go to the gym? (Scale 1 is low, 5 is high)</label>
+								<label for="">1) How often do you go to the gym? {Scale of 1 (low) - 5 (high)}</label>
 								<input type="number" class="form-control" id="answer_firstquestion" min = "1" max ="5">
 							</div>
 
 								<div class="form-group">
-								<label for="">2) On A Scale of 1-5: How often do you cook? (Scale 1 is low, 5 is high)</label>
+								<label for="">2) How often do you cook? {Scale of 1 (low) - 5 (high)}</label>
 								<input type="number" class="form-control" id="answer_secondquestion" min = "1" max ="5">
 							</div>
 
 								<div class="form-group">
-								<label for="">3) On A Scale of 1-5: Do you like rock climbing? (Scale 1 is low, 5 is high)</label>
+								<label for="">3) Do you like rock climbing? {Scale of 1 (low) - 5 (high)}</label>
 								<input type="number" class="form-control" id="answer_thirdquestion" min = "1" max ="5">
 							</div>
 						
 							<div class="form-group">
-									<label for="">4) On A Scale of 1-5: Do you like playing video games? (Scale 1 is low, 5 is high)</label>
+									<label for="">4) Do you like playing video games? {Scale of 1 (low) - 5 (high)}</label>
 									<input type="number" class="form-control" id="answer_fourthquestion" min = "1" max ="5">
 								</div>	
 
 							<div class="form-group">
-								<label for="">5) On A Scale of 1-5: Do you like watching television? (Scale 1 is low, 5 is high)</label>
+								<label for="">5) Do you like watching television? {Scale of 1 (low) - 5 (high)}</label>
 								<input type="number" class="form-control" id="answer_fifthquestion" min = "1" max ="5">
 							</div>							
 
 
 							<div class="form-group">
-								<label for="">6) On A Scale of 1-5: Do you like home improvement projects? (Scale 1 is low, 5 is high)</label>
+								<label for="">6) Do you like home improvement projects? {Scale of 1 (low) - 5 (high)}</label>
 								<input type="number" class="form-control" id="answer_sixthquestion" min = "1" max ="5">
 							</div>
 
 							<div class="form-group">
-								<label for="">7) On A Scale of 1-5: Do you like going to museums? (Scale 1 is low, 5 is high)</label>
+								<label for="">7) Do you like going to museums? {Scale of 1 (low) - 5 (high)}</label>
 								<input type="number" class="form-control" id="answer_seventhquestion" min = "1" max ="5">
 							</div>
 
 							<div class="form-group">
-								<label for="">8) On A Scale of 1-5: Do you like traveling? (Scale 1 is low, 5 is high)</label>
+								<label for="">8) Do you like traveling? {Scale of 1 (low) - 5 (high)}</label>
 								<input type="number" class="form-control" id="answer_eigthquestion" min = "1" max ="5">
 							</div>
 
 							<div class="form-group">
-								<label for="">9) On A Scale of 1-5: Do you like music festivals? (Scale 1 is low, 5 is high)</label>
+								<label for="">9) Do you like music festivals? {Scale of 1 (low) - 5 (high)}</label>
 								<input type="number" class="form-control" id="answer_ninthquestion" min = "1" max ="5">
 							</div>
 
 							<div class="form-group">
-								<label for="">10) On A Scale of 1-5: Do you like sunny weather? (Scale 1 is low, 5 is high)</label>
+								<label for="">10) Do you like sunny weather? {Scale of 1 (low) - 5 (high)}</label>
 								<input type="number" class="form-control" id="answer_tenthquestion" min = "1" max ="5">
 							</div>
 		
@@ -113,8 +108,8 @@
 
 	    <footer class="footer">
 	      <div class="container">
-	      <!-- edit with Angel's Github Link  https://github.com/angelica3010-->
-	        <p><a href="/api/survey">API Survey Link</a> | <a href="https://github.com/afhaque/HotRestaurant">GitHub Repo</a></p>
+	      
+	        <p><a href="/api/survey">API Survey </a> | <a href="https://github.com/angelica3010/week13FriendFinder">GitHub Repo</a></p>
 	      </div>
 	    </footer>
 
@@ -128,10 +123,9 @@
 	// In this code below we create the Front-end Javascript which "POSTS" our form data to our express server.
 	// In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
 	// Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
-	// In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file 
 	$(".submit").on("click", function(){
 		
-		// Here we grab the form elements
+		// Here we grab the form elements when a user submits the survey
 		var friendsAnswers = {
 			name: $('#answer_name').val().trim(),
 			photo: $('#answer_photo').val().trim(),
@@ -140,99 +134,45 @@
 		};
 
 		console.log(friendsAnswers);
-		// This line is the magic. It's very similar to the standard ajax function we used. 
-		// Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
-		// The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
-		// depending on if a tables is available or not. 
-		// Here we get the location of the root page. 
-		// We use this instead of explicitly saying the URL is localhost:3001 because the url will change when we deploy.
 
 $.post( "/api/friends-check", { scores: friendsAnswers.scores }, function(data){
 
-// The data we get back will either be a name in firends.js or a zero if we didn't find a match
+// The data we get back will either be a name in friends.js or a zero if we didn't find a match
 
-if(data!=0){
+	if(data!=0){
+	// console.log(data);
 
-	alert("Friend Name "+ data);
-
-
-}else{
-
-	alert("No friends");
-
-}
-
-});
-
-
-//$.post()
+		alert("Your Potential Match is "+ data.name);
 
 
 
-		return false
-	    	
-	    	});
+	} else{
 
+		alert("No friends");
 
+		}
 
-	    	// Clear the form when submitting
-    		$('#answer_name').val("");
-    		$('#answer_photo').val("");
-			$('#answer_firstquestion').val("");
-			$('#answer_secondquestion').val("");
-			$('#answer_thirdquestion').val("");
-			$('#answer_fourthquestion').val("");
-			$('#answer_fifthquestion').val("");
-			$('#answer_eigthquestion').val("");
-			$('#answer_ninthquestion').val("");
-			$('#answer_tenthquestion').val("");
+	});
 
-//compare the total friends array		
-// function comparison (scoreresults){
-// for (var i =0; i< friendsArray.length; i++{
+	return false
+		    	
+	});
 
-// //compare the scores section in array
-// for (var j =0; j< friendsArray[i].scores.length; j++{
-
-// 	// api check scores and then api will take the scores that they were submitted and compares the results 
-// 	// from friends.js
-
-
-// // 	if friendsAnswers.scores - friendsArray[i].scores <
-// // if (err) throw err;
-
-// }
-// }
-// }
-
-
-// }
-// }
-// 	}
-
-
-
-	    // });
-// return false;
+// Clear the form when submitting
+$('#answer_name').val("");
+$('#answer_photo').val("");
+$('#answer_firstquestion').val("");
+$('#answer_secondquestion').val("");
+$('#answer_thirdquestion').val("");
+$('#answer_fourthquestion').val("");
+$('#answer_fifthquestion').val("");
+$('#answer_eigthquestion').val("");
+$('#answer_ninthquestion').val("");
+$('#answer_tenthquestion').val("");
 
 </script>
-
-
-
-
-
 
 
 <!-- //heroku link
 https://shrouded-badlands-71793.herokuapp.com/ | https://git.heroku.com/shrouded-badlands-71793.git -->
 
-	<!-- 	var currentURL = window.location.origin;
-	    $.post(currentURL + "/api/tables", newReservation,
-	    function(data){
-	    	// If a table is available... tell user they are booked.
-	    	if(data == true){
-	    		alert("Yay! You are officially booked!")
-	    	}
-	    	// If a table is available... tell user they on the waiting list.
-	    	if(data == false){
-	    		alert("Sorry you are on the wait list") -->
